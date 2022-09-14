@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { Cadastro } from './cadastro/entities/cadastro.entity';
+import { cadastroModule } from './cadastro/modules/cadastro.module';
 import { Postagem } from './postagem/entities/postagem.entity';
-import { PostagemModule } from './postagem/modules/postagem.module';
+import { postagemModule } from './postagem/modules/postagem.module';
+import { Tema } from './tema/entities/tema.entity';
+import { temaModule } from './tema/modules/tema.module';
 
 @Module({
   imports: [
@@ -14,11 +16,13 @@ import { PostagemModule } from './postagem/modules/postagem.module';
       username: 'root',
       password: 'root',
       database: 'db_projeto',
-      entities: [Postagem],
+      entities: [Postagem, Tema, Cadastro],
       synchronize: true
     }),
-    PostagemModule
-  ],
+postagemModule,
+temaModule,
+cadastroModule
+],
   controllers: [],
   providers: [],
 })
