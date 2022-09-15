@@ -1,6 +1,6 @@
 import { IsNotEmpty, MaxLength } from "class-validator";
-import { Cadastro } from "src/cadastro/entities/cadastro.entity";
-import { Postagem } from "src/postagem/entities/postagem.entity";
+import { Cadastro } from "../../cadastro/entities/cadastro.entity";
+import { Postagem } from "../../postagem/entities/postagem.entity";
 import { Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
@@ -20,7 +20,8 @@ export class Usuario{
     })
     postagem: Postagem
 
-    @OneToOne(() => Cadastro, (cadastro) => cadastro.usuario) 
+    @OneToOne(() => Cadastro, (cadastro) => cadastro.usuario)
+    @JoinColumn()
     cadastro: Cadastro
 
 }

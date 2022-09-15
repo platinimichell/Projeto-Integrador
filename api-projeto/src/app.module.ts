@@ -6,6 +6,8 @@ import { Postagem } from './postagem/entities/postagem.entity';
 import { postagemModule } from './postagem/modules/postagem.module';
 import { Tema } from './tema/entities/tema.entity';
 import { temaModule } from './tema/modules/tema.module';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { usuarioModule } from './usuario/modules/usuario.module';
 
 @Module({
   imports: [
@@ -16,12 +18,13 @@ import { temaModule } from './tema/modules/tema.module';
       username: 'root',
       password: 'root',
       database: 'db_projeto',
-      entities: [Postagem, Tema, Cadastro],
+      entities: [Postagem, Tema, Cadastro, Usuario],
       synchronize: true
     }),
 postagemModule,
 temaModule,
-cadastroModule
+cadastroModule,
+usuarioModule
 ],
   controllers: [],
   providers: [],

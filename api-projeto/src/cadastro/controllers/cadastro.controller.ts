@@ -18,13 +18,13 @@ export class cadastroController {
     findById(@Param('id', ParseIntPipe) id: number): Promise<Cadastro> {
         return this.service.findById(id)
     }
-    @Get('/cadastro/:genero')
+    @Get('/genero/:genero')
     @HttpCode(HttpStatus.OK)
     findByGenero(@Param('genero') genero: string): Promise<Cadastro[]> {
-        return this.service.findByNome(genero)
+        return this.service.findByGenero(genero)
     }
 
-    @Get('/cadastro/:nome')
+    @Get('/nome/:nome')
     @HttpCode(HttpStatus.OK)
     findByNome(@Param('nome') nome: string): Promise<Cadastro[]> {
         return this.service.findByNome(nome)

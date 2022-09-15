@@ -34,6 +34,7 @@ export class cadastroService {
                 genero: ILike(`% ${genero} %`)
             },
         })
+        
     }
 
 
