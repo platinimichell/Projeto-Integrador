@@ -1,7 +1,10 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
+import { ApiTags } from "@nestjs/swagger";
 import { Tema } from "../entities/tema.entity";
 import { temaService } from "../services/tema.service";
 
+
+@ApiTags()
 @Controller('/tema')
 export class temaController {
 
