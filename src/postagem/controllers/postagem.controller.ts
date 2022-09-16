@@ -3,7 +3,7 @@ import { ApiTags } from "@nestjs/swagger";
 import { Postagem } from "../entities/postagem.entity";
 import { postagemService } from "../services/postagem.service";
 
-@ApiTags()
+@ApiTags('Postagem')
 @Controller('/postagem')
 export class postagemController{
 

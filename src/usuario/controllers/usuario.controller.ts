@@ -3,7 +3,7 @@ import { ApiTags } from "@nestjs/swagger";
 import { Usuario } from "../entities/usuario.entity";
 import { usuarioService } from "../services/usuario.service";
 
-@ApiTags()
+@ApiTags('Usuario')
 @Controller('/usuario')
 export class usuarioController {
 

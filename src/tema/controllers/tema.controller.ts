@@ -4,7 +4,7 @@ import { Tema } from "../entities/tema.entity";
 import { temaService } from "../services/tema.service";
 
 
-@ApiTags()
+@ApiTags('Tema')
 @Controller('/tema')
 export class temaController {
 
